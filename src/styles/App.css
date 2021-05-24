@@ -1,0 +1,97 @@
+body {
+	/* color: #484649; */
+}
+
+*:focus {
+	outline-color: #ba2d72;
+}
+
+.layoutContainer {
+	flex-grow: 1;
+	margin: 0 auto;
+	position: relative;
+	width: auto;
+	max-width: 960px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.content {
+	flex-grow: 1;
+	margin: 0 auto;
+	position: relative;
+	background-color: #f6e6de;
+	border-radius: 8px;
+	padding: 30px;
+}
+
+main {
+	padding-bottom: 80px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+}
+
+a {
+	color: #040c25;
+}
+
+a:focus {
+	text-decoration: none;
+	outline-offset: 2px;
+}
+
+input,
+button,
+select {
+	border: 1px solid #616161;
+	border-radius: 4px;
+	padding: 12px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+input[type="radio"] + label {
+	display: inline-block;
+	margin-left: 4px;
+	margin-right: 8px;
+}
+
+button,
+input[type="submit"] {
+	color: #fff;
+	background-color: #075e65;
+	cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+	background-color: rgba(#075e65, 0.75);
+}
+
+.form-field-wrap {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+	.form-field-wrap {
+		width: 100%;
+	}
+
+	button,
+	input[type="submit"],
+	input[type="text"],
+	form {
+		width: 100%;
+	}
+}

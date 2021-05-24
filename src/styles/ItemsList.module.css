@@ -1,0 +1,34 @@
+.clothingList {
+	/* list-style: none; */
+	padding: 0;
+	margin-bottom: 30px;
+}
+
+.condition {
+}
+
+.remove {
+	padding: 0 0 0 20px;
+	border: 0;
+	background-color: #fff;
+	color: #000;
+	background: url("../images/icon-delete.svg");
+	background-repeat: no-repeat;
+	background-size: 14px;
+	background-position: left center;
+}
+
+.item {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.item span {
+	flex: 1;
+	margin-right: 6px;
+}
+
+.item button {
+	flex: 0;
+}

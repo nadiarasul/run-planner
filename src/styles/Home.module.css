@@ -1,0 +1,26 @@
+.weatherForm {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.buttonWrap,
+.textWrap {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+	.weatherForm {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.textWrap,
+	.textWrap p {
+		margin: 0;
+	}
+
+	.buttonWrap {
+		width: 100%;
+	}
+}
