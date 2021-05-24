@@ -37,7 +37,6 @@ export const getWeatherAction = (url) => {
 		try {
 			const res = await axios.get(url);
 			const data = await res.data;
-			console.log(data);
 
 			const getWeatherRange = (temperature) => {
 				if (temperature < 0) {
