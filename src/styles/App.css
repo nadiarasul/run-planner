@@ -25,6 +25,18 @@ body {
 	padding: 30px;
 }
 
+.hot {
+	background-color: #ffd267;
+}
+
+.mild {
+	background-color: #dbebc6;
+}
+
+.cold {
+	background-color: #87d9ff;
+}
+
 main {
 	padding-bottom: 80px;
 }

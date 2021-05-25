@@ -1,11 +1,26 @@
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setUnits, setName } from "./connect/actions";
+import { setUnits, setName, getWeatherAction } from "./connect/actions";
 import styles from "./styles/Settings.module.css";
+
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 function Settings(props) {
 	const dispatch = useDispatch();
 	const units = useSelector((state) => state.settings.units);
 	const username = useSelector((state) => state.settings.username);
+	const city = useSelector((state) => state.weather.city);
+
+	const handleUnits = (e) => {
+		dispatch(setUnits(e.target.value));
+		const url = new URL("https://api.openweathermap.org/data/2.5/weather");
+		url.search = new URLSearchParams({
+			appid: API_KEY,
+			q: city,
+			units: e.target.value,
+		});
+		dispatch(getWeatherAction(url));
+	};
 
 	return (
 		<div className="content">
@@ -20,7 +35,7 @@ function Settings(props) {
 							id="imperial"
 							value="imperial"
 							checked={units === "imperial"}
-							onChange={(e) => dispatch(setUnits(e.target.value))}
+							onChange={handleUnits}
 						/>
 						<label htmlFor="imperial">F</label>
 						<input
@@ -29,7 +44,7 @@ function Settings(props) {
 							id="metric"
 							value="metric"
 							checked={units === "metric"}
-							onChange={(e) => dispatch(setUnits(e.target.value))}
+							onChange={handleUnits}
 						/>
 						<label htmlFor="metric">C</label>
 					</div>
