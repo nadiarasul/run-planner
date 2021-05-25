@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { setUnits, setName, getWeatherAction } from "./connect/actions";
-import styles from "./styles/Settings.module.css";
+// import styles from "./styles/Settings.module.css";
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
