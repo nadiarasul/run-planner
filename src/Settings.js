@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setUnits, setName, getWeatherAction } from "./connect/actions";
 import styles from "./styles/Settings.module.css";

@@ -1,9 +1,11 @@
 body {
 	/* color: #484649; */
+	font-size: 16px;
+	font-weight: 600;
 }
 
 *:focus {
-	outline-color: #ba2d72;
+	outline-color: #075e65;
 }
 
 .layoutContainer {
@@ -20,9 +22,8 @@ body {
 	flex-grow: 1;
 	margin: 0 auto;
 	position: relative;
-	background-color: #f6e6de;
-	border-radius: 8px;
-	padding: 30px;
+	background-color: #d3dee0;
+	padding: 35px;
 }
 
 .hot {
@@ -56,7 +57,16 @@ a {
 
 a:focus {
 	text-decoration: none;
-	outline-offset: 2px;
+	outline-offset: 3px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+ul li {
+	margin-bottom: 10px;
 }
 
 input,
@@ -90,8 +100,12 @@ input[type="submit"]:hover {
 	background-color: rgba(#075e65, 0.75);
 }
 
+button:focus,
+input[type="submit"]:focus {
+	outline-color: black;
+}
+
 .form-field-wrap {
-	margin-top: 20px;
 	margin-bottom: 20px;
 }
 

@@ -1,2 +1,8 @@
 .details {
 }
+.weatherIcon {
+}
+
+.weatherIcon img {
+	height: 120px;
+}

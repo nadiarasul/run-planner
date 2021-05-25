@@ -63,7 +63,7 @@ nav ul li a.selected:after {
 	content: "";
 	width: calc(100% - 24px);
 	height: 3px;
-	background-color: #ba2d72;
+	background-color: #075e65;
 	position: absolute;
 	bottom: -4px;
 	right: 0;

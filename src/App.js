@@ -14,8 +14,7 @@ import About from "./About";
 import Wardrobe from "./ManageWardrobe";
 
 // TO DO:
-// 1. convert C to F locally rather than new API call
-// 2. user accounts
+// 1. user accounts
 
 const middleware = composeWithDevTools(applyMiddleware(thunkMiddleware));
 

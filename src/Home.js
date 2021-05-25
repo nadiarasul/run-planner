@@ -54,29 +54,29 @@ function Home(props) {
 
 	return (
 		<div className={`content ${range}`}>
-			<h1>Welcome {username}!</h1>
-			<div className={styles.weatherForm}>
-				<form onSubmit={handleSubmit} className={styles.weatherForm}>
-					<div className="form-field-wrap">
-						<label htmlFor="city">Enter your city: </label>
-						<input
-							type="text"
-							id="city"
-							value={queryCity}
-							onChange={handleChange}
-						/>
+			<h1>Hello {username}!</h1>
+			<div className={styles.homeLayout}>
+				<div>
+					<div className={styles.weatherForm}>
+						<form onSubmit={handleSubmit} className={styles.weatherForm}>
+							<div className="form-field-wrap">
+								<label htmlFor="city">Enter your city: </label>
+								<input
+									type="text"
+									id="city"
+									value={queryCity}
+									onChange={handleChange}
+								/>
+							</div>
+							<div className="form-field-wrap">
+								<input type="submit" value="Submit" />
+							</div>
+						</form>
 					</div>
-					<div className="form-field-wrap">
-						<input type="submit" value="Submit" />
-					</div>
-				</form>
+					{showCard && <WeatherCard />}
+				</div>
+				{showCard && <WardrobeCard />}
 			</div>
-			{showCard && (
-				<>
-					<WeatherCard />
-					<WardrobeCard />
-				</>
-			)}
 		</div>
 	);
 }

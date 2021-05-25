@@ -1,27 +1,11 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import styles from "./styles/WardrobeCard.module.css";
-import flipflops from "./images/icon-flipflops.svg";
-import hoodie from "./images/icon-hoodie.svg";
-import hat from "./images/icon-hat.svg";
 
 function WardrobeCard(props) {
 	const clothingItems = useSelector((state) => state.settings.wardrobe);
 	const range = useSelector((state) => state.weather.range);
 	const [currentClothes, setCurrentClothes] = useState([]);
-
-	const showClothingIcon = (weather) => {
-		switch (weather) {
-			case "hot":
-				return <img src={flipflops} alt="flip flops" />;
-			case "mild":
-				return <img src={hoodie} alt="hoodie" />;
-			case "cold":
-				return <img src={hat} alt="wool hat" />;
-			default:
-				return;
-		}
-	};
 
 	const renderItems = (type) => {
 		return (
@@ -56,9 +40,7 @@ function WardrobeCard(props) {
 
 	return (
 		<div className={styles.wardrobeCard}>
-			<h2>Looks like it's {range}</h2>
-			{showClothingIcon(range)}
-			<p>Here's what you could wear:</p>
+			<h2>Here's what you could wear:</h2>
 			<h3>Tops</h3>
 			{currentClothes && renderItems("top")}
 			<h3>Bottoms</h3>
