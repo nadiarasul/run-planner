@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunkMiddleware from "redux-thunk";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import reducer from "./connect/reducer";
 
 import "./styles/setup.css";
@@ -12,9 +12,6 @@ import Home from "./Home";
 import Settings from "./Settings";
 import About from "./About";
 import Wardrobe from "./ManageWardrobe";
-
-// TO DO:
-// 1. user accounts
 
 const middleware = composeWithDevTools(applyMiddleware(thunkMiddleware));
 
