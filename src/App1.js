@@ -102,7 +102,7 @@ function App() {
 	const getWeather = () => {
 		const url = new URL("https://api.openweathermap.org/data/2.5/weather");
 		url.search = new URLSearchParams({
-			appid: "0390d5f2d1f9abebe5efea7df3dc59f7",
+			appid: API_KEY,
 			q: city,
 			units: units,
 		});

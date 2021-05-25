@@ -15,6 +15,7 @@ function Home(props) {
 	const units = useSelector((state) => state.settings.units);
 	const username = useSelector((state) => state.settings.username);
 	const showCard = useSelector((state) => state.weather.showCard);
+	const range = useSelector((state) => state.weather.range);
 
 	const [queryCity, setQueryCity] = useState("");
 
@@ -52,7 +53,7 @@ function Home(props) {
 	}, [dispatch]);
 
 	return (
-		<div className="content">
+		<div className={`content ${range}`}>
 			<h1>Welcome {username}!</h1>
 			<div className={styles.weatherForm}>
 				<form onSubmit={handleSubmit} className={styles.weatherForm}>
