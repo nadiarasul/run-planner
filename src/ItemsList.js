@@ -18,6 +18,7 @@ function ItemsList(props) {
 			name: name,
 			type: type,
 			weatherType: weatherType,
+			isDirty: false,
 		});
 	};
 
@@ -26,6 +27,14 @@ function ItemsList(props) {
 		const id = e.target.getAttribute("data-id");
 		const singleItemRef = firebase.database().ref(`clothes/${id}`);
 		singleItemRef.remove();
+	};
+
+	const handleCheckbox = (e) => {
+		const id = e.target.getAttribute("data-id");
+		const singleItemRef = firebase.database().ref(`clothes/${id}`);
+		singleItemRef.update({
+			isDirty: e.target.checked,
+		});
 	};
 
 	const renderItems = (type) => {
@@ -39,6 +48,17 @@ function ItemsList(props) {
 								<span>
 									{x.name} - {x.weatherType}{" "}
 								</span>
+								<label htmlFor={x.productId}>
+									In the wash:
+									<input
+										type="checkbox"
+										name={x.productId}
+										id={x.productId}
+										data-id={x.productId}
+										checked={x.isDirty}
+										onChange={handleCheckbox}
+									/>
+								</label>
 								<button
 									className={styles.remove}
 									onClick={handleRemove}

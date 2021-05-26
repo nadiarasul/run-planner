@@ -44,8 +44,8 @@ function Home(props) {
 
 			const productsFromDb = [];
 			for (let productId in firebaseData) {
-				const { name, type, weatherType } = firebaseData[productId];
-				productsFromDb.push({ productId, name, type, weatherType });
+				const { name, type, weatherType, isDirty } = firebaseData[productId];
+				productsFromDb.push({ productId, name, type, weatherType, isDirty });
 			}
 
 			dispatch(setWardrobe(productsFromDb));
