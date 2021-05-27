@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import styles from "./styles/WardrobeCard.module.css";
+import styles from "../styles/WardrobeCard.module.css";
 
 function WardrobeCard(props) {
 	const clothingItems = useSelector((state) => state.settings.wardrobe);

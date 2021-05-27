@@ -5,11 +5,11 @@ import "./styles/setup.css";
 import "./styles/App.css";
 import firebase from "./firebase.js";
 import { setWardrobe } from "./connect/actions";
-import Header from "./Header";
-import Home from "./Home";
-import Settings from "./Settings";
-import About from "./About";
-import Wardrobe from "./ManageWardrobe";
+import Header from "./Components/Header";
+import Home from "./Components/Home";
+import Settings from "./Components/Settings";
+import About from "./Components/About";
+import Wardrobe from "./Components/ManageWardrobe";
 
 function App() {
 	const dispatch = useDispatch();

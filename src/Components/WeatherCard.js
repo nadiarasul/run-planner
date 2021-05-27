@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import styles from "./styles/WeatherCard.module.css";
-import flipflops from "./images/icon-flipflops.svg";
-import hoodie from "./images/icon-hoodie.svg";
-import hat from "./images/icon-hat.svg";
+import styles from "../styles/WeatherCard.module.css";
+import flipflops from "../images/icon-flipflops.svg";
+import hoodie from "../images/icon-hoodie.svg";
+import hat from "../images/icon-hat.svg";
 
 function WeatherCard(props) {
 	const weatherData = useSelector((state) => state.weather);
