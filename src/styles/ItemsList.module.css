@@ -1,10 +1,17 @@
 .clothingList {
-	/* list-style: none; */
 	padding: 0;
 	margin-bottom: 30px;
 }
 
-.condition {
+.itemsListForm {
+	display: flex;
+	align-items: flex-end;
+	flex-wrap: wrap;
+}
+
+.fieldWrap {
+	margin-bottom: 20px;
+	margin-right: 8px;
 }
 
 .remove {
@@ -24,11 +31,78 @@
 	margin-bottom: 10px;
 }
 
-.item span {
+.item p {
 	flex: 1;
-	margin-right: 6px;
+	margin: 0 6px 0 0;
 }
 
 .item button {
 	flex: 0;
+	margin-left: 20px;
+}
+
+.checkbox {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	margin: 0;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+}
+
+.checkboxLabel {
+	margin-bottom: 0;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+}
+
+.checkbox:focus + label {
+	outline: 5px auto -webkit-focus-ring-color;
+	outline: 5px auto #000;
+}
+
+.checkboxLabel:before {
+	content: "";
+	text-align: center;
+	display: inline-block;
+	width: 17px;
+	height: 16px;
+	line-height: 16px;
+	margin-right: 6px;
+	border: 0.1rem solid #000;
+	background-color: #fff;
+}
+
+.checkbox:checked + label:before {
+	background: url("../images/icon-check.svg") center center no-repeat;
+	background-size: 12px 9px;
+	background-color: #fff;
+}
+
+@media only screen and (max-width: 500px) {
+	.itemsListForm {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.fieldWrap {
+		width: 100%;
+	}
+	.item {
+		flex-direction: column;
+		align-items: flex-start;
+		margin-bottom: 20px;
+	}
+
+	.item p,
+	.checkboxLabel {
+		margin-bottom: 8px;
+	}
+
+	.item button {
+		width: auto;
+		margin-left: 0;
+	}
 }

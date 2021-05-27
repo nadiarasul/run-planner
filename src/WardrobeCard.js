@@ -12,11 +12,12 @@ function WardrobeCard(props) {
 			<ul className={styles.clothingList}>
 				{currentClothes
 					.filter((item) => item.type === type)
-					.map((x, i) => {
+					.filter((item) => !item.isDirty)
+					.map((item, index) => {
 						return (
-							<li key={i} className={styles.item}>
+							<li key={index} className={styles.item}>
 								<span>
-									{x.name} - {x.weatherType}{" "}
+									{item.name} - {item.weatherType}{" "}
 								</span>
 							</li>
 						);
@@ -39,7 +40,7 @@ function WardrobeCard(props) {
 	}, [clothingItems, range]);
 
 	return (
-		<div className={styles.wardrobeCard}>
+		<div className={styles.columnRight}>
 			<h2>Here's what you could wear:</h2>
 			<h3>Tops</h3>
 			{currentClothes && renderItems("top")}

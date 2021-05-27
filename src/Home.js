@@ -1,9 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import firebase from "./firebase.js";
-
-import { setWardrobe, getWeatherAction } from "./connect/actions";
-
+import { getWeatherAction } from "./connect/actions";
 import WeatherCard from "./WeatherCard";
 import WardrobeCard from "./WardrobeCard";
 import styles from "./styles/Home.module.css";
@@ -36,27 +33,13 @@ function Home(props) {
 		setQueryCity(userInput);
 	};
 
-	useEffect(() => {
-		const productsRef = firebase.database().ref("clothes");
-
-		productsRef.on("value", (snapshot) => {
-			const firebaseData = snapshot.val();
-
-			const productsFromDb = [];
-			for (let productId in firebaseData) {
-				const { name, type, weatherType } = firebaseData[productId];
-				productsFromDb.push({ productId, name, type, weatherType });
-			}
-
-			dispatch(setWardrobe(productsFromDb));
-		});
-	}, [dispatch]);
-
 	return (
 		<div className={`content ${range}`}>
-			<h1>Hello {username}!</h1>
+			<div className={styles.homeHeader}>
+				<h1>Hello {username}!</h1>
+			</div>
 			<div className={styles.homeLayout}>
-				<div>
+				<div className={styles.columnLeft}>
 					<div className={styles.weatherForm}>
 						<form onSubmit={handleSubmit} className={styles.weatherForm}>
 							<div className="form-field-wrap">

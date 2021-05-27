@@ -3,6 +3,7 @@ import "firebase/database";
 import "firebase/auth";
 
 const API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
+const APP_ID = process.env.REACT_APP_FIREBASE_APP_ID;
 
 // Initialize Firebase
 // *** USE YOUR CONFIG OBJECT ***
@@ -12,7 +13,7 @@ const config = {
 	projectId: "run-planner-6dbb5",
 	storageBucket: "run-planner-6dbb5.appspot.com",
 	messagingSenderId: "162340731785",
-	appId: "1:162340731785:web:7b9d2e4f986ffde0063f58",
+	appId: APP_ID,
 };
 firebase.initializeApp(config);
 

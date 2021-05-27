@@ -27,10 +27,6 @@ function WeatherCard(props) {
 		<div className={styles.weatherCard}>
 			<h2>Your Weather in {city}</h2>
 			<div className={styles.details}>
-				<img
-					src={`http://openweathermap.org/img/wn/${weatherData.weather.icon}@2x.png`}
-					alt={weatherData.weather.description}
-				/>
 				<div>
 					<p>
 						Temperature: {weatherData.main.temp}&deg;
@@ -39,6 +35,10 @@ function WeatherCard(props) {
 						{units === "metric" ? "C" : "F"}
 					</p>
 				</div>
+				<img
+					src={`http://openweathermap.org/img/wn/${weatherData.weather.icon}@2x.png`}
+					alt={weatherData.weather.description}
+				/>
 			</div>
 			<h2>Looks like it's {range}</h2>
 			<div className={styles.weatherIcon}> {showClothingIcon(range)}</div>
