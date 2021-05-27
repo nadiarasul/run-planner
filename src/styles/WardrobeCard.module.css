@@ -4,6 +4,15 @@
 	padding-right: 0.9375rem;
 }
 
+.columnRight h3 {
+	margin-bottom: 10px;
+}
+
+.clothingList {
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
 @media only screen and (max-width: 500px) {
 	.columnRight {
 		width: 100%;

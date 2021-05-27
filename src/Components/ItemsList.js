@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import firebase from "./firebase.js";
+import firebase from "../firebase.js";
 
-import styles from "./styles/ItemsList.module.css";
+import styles from "../styles/ItemsList.module.css";
 
 function ItemsList(props) {
 	const clothingItems = useSelector((state) => state.settings.wardrobe);

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getWeatherAction } from "./connect/actions";
+import { getWeatherAction } from "../connect/actions";
 import WeatherCard from "./WeatherCard";
 import WardrobeCard from "./WardrobeCard";
-import styles from "./styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
