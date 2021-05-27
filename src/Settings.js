@@ -24,43 +24,38 @@ function Settings(props) {
 	return (
 		<div className="content">
 			<h1>Settings</h1>
-			<div>
-				<fieldset>
-					<legend>Set your units:</legend>
-					<div className="form-field-wrap">
-						<input
-							type="radio"
-							name="units"
-							id="imperial"
-							value="imperial"
-							checked={units === "imperial"}
-							onChange={handleUnits}
-						/>
-						<label htmlFor="imperial">F</label>
-						<input
-							type="radio"
-							name="units"
-							id="metric"
-							value="metric"
-							checked={units === "metric"}
-							onChange={handleUnits}
-						/>
-						<label htmlFor="metric">C</label>
-					</div>
-				</fieldset>
-				<div>
-					<h2>Profile</h2>
-					<div className="form-field-wrap">
-						<label htmlFor="name">First name:</label>
-						<input
-							type="text"
-							id="name"
-							autoComplete="fname"
-							value={username}
-							onChange={(e) => dispatch(setName(e.target.value))}
-						/>
-					</div>
+			<fieldset>
+				<legend>Set your units:</legend>
+				<div className="form-field-wrap">
+					<input
+						type="radio"
+						name="units"
+						id="imperial"
+						value="imperial"
+						checked={units === "imperial"}
+						onChange={handleUnits}
+					/>
+					<label htmlFor="imperial">F</label>
+					<input
+						type="radio"
+						name="units"
+						id="metric"
+						value="metric"
+						checked={units === "metric"}
+						onChange={handleUnits}
+					/>
+					<label htmlFor="metric">C</label>
 				</div>
+			</fieldset>
+			<div className="form-field-wrap">
+				<label htmlFor="name">First name:</label>
+				<input
+					type="text"
+					id="name"
+					autoComplete="fname"
+					value={username}
+					onChange={(e) => dispatch(setName(e.target.value))}
+				/>
 			</div>
 		</div>
 	);

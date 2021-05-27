@@ -1,1 +1,12 @@
+.columnRight {
+	width: 50%;
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
+}
 
+@media only screen and (max-width: 500px) {
+	.columnRight {
+		width: 100%;
+		margin-top: 40px;
+	}
+}

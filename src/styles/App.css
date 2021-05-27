@@ -1,5 +1,4 @@
 body {
-	/* color: #484649; */
 	font-size: 16px;
 	font-weight: 600;
 }
@@ -23,7 +22,7 @@ body {
 	margin: 0 auto;
 	position: relative;
 	background-color: #d3dee0;
-	padding: 35px;
+	padding: 30px;
 }
 
 .hot {
@@ -70,11 +69,31 @@ ul li {
 }
 
 input,
-button,
-select {
+button {
 	border: 1px solid #616161;
-	border-radius: 4px;
 	padding: 12px;
+}
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	border: 1px solid #616161;
+	border-radius: 0;
+	padding: 11px 20px 11px 11px;
+	background: url("../images/icon-chevron.svg") right 5px center no-repeat;
+	background-color: #fff;
+	background-size: 8px;
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+legend {
+	margin-bottom: 5px;
 }
 
 label {
@@ -117,6 +136,7 @@ input[type="submit"]:focus {
 	button,
 	input[type="submit"],
 	input[type="text"],
+	select,
 	form {
 		width: 100%;
 	}

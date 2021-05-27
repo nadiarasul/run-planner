@@ -1,7 +1,13 @@
+.homeHeader {
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
+}
+
 .weatherForm {
 	display: flex;
-	justify-content: space-between;
 	align-items: flex-end;
+	flex-wrap: wrap;
+	width: 100%;
 }
 
 .buttonWrap,
@@ -14,19 +20,32 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.columnLeft {
+	width: 50%;
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
 }
 
 @media only screen and (max-width: 500px) {
 	.weatherForm {
 		flex-direction: column;
 		align-items: flex-start;
+		margin-bottom: 20px;
 	}
+
 	.textWrap,
 	.textWrap p {
 		margin: 0;
 	}
 
 	.buttonWrap {
+		width: 100%;
+	}
+
+	.columnLeft {
 		width: 100%;
 	}
 }

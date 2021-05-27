@@ -42,27 +42,32 @@ function ItemsList(props) {
 			<ul className={styles.clothingList}>
 				{clothingItems
 					.filter((item) => item.type === type)
-					.map((x, i) => {
+					.map((item, index) => {
 						return (
-							<li key={i} className={styles.item}>
+							<li key={index} className={styles.item}>
+								<p id={`item-${item.productId}`}>
+									{item.name} - {item.weatherType}{" "}
+								</p>
 								<span>
-									{x.name} - {x.weatherType}{" "}
-								</span>
-								<label htmlFor={x.productId}>
-									In the wash:
 									<input
 										type="checkbox"
-										name={x.productId}
-										id={x.productId}
-										data-id={x.productId}
-										checked={x.isDirty}
+										name={item.productId}
+										id={item.productId}
+										data-id={item.productId}
+										checked={item.isDirty}
 										onChange={handleCheckbox}
+										className={styles.checkbox}
 									/>
-								</label>
+									<label
+										htmlFor={item.productId}
+										className={styles.checkboxLabel}>
+										In the wash
+									</label>
+								</span>
 								<button
 									className={styles.remove}
 									onClick={handleRemove}
-									data-id={x.productId}>
+									data-id={item.productId}>
 									Remove
 								</button>
 							</li>
@@ -76,8 +81,8 @@ function ItemsList(props) {
 		<div>
 			<h2>Add your items</h2>
 			<div>
-				<form onSubmit={handleSubmit}>
-					<div className="form-field-wrap">
+				<form onSubmit={handleSubmit} className={styles.itemsListForm}>
+					<div className={styles.fieldWrap}>
 						<label htmlFor="user-items">Item name:</label>
 						<input
 							type="text"
@@ -88,7 +93,7 @@ function ItemsList(props) {
 							aria-required="true"
 						/>
 					</div>
-					<div className="form-field-wrap">
+					<div className={styles.fieldWrap}>
 						<label htmlFor="type">Select a type:</label>
 						<select
 							name="type"
@@ -104,8 +109,8 @@ function ItemsList(props) {
 							<option value="shoes">Shoes</option>
 						</select>
 					</div>
-					<div className="form-field-wrap">
-						<label htmlFor="weatherType">Select weather type:</label>
+					<div className={styles.fieldWrap}>
+						<label htmlFor="weatherType">Select weather:</label>
 						<select
 							name="weatherType"
 							id="weatherType"
@@ -119,7 +124,7 @@ function ItemsList(props) {
 							<option value="cold">Cold</option>
 						</select>
 					</div>
-					<div className="form-field-wrap">
+					<div className={styles.fieldWrap}>
 						<button type="submit">Save Item</button>
 					</div>
 				</form>
