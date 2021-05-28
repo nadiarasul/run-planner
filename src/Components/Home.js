@@ -24,7 +24,7 @@ function Home(props) {
 			q: queryCity,
 			units: units,
 		});
-		dispatch(getWeatherAction(url));
+		dispatch(getWeatherAction(url, units));
 		setQueryCity("");
 	};
 

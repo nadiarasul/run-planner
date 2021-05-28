@@ -32,26 +32,37 @@ export const weatherSuccess = (data, temp) => {
 	};
 };
 
-export const getWeatherAction = (url) => {
+export const getWeatherAction = (url, units) => {
+	let cold = "";
+	let mild = "";
+	if (units === "metric") {
+		cold = 0;
+		mild = 10;
+	}
+
+	if (units === "imperial") {
+		cold = 32;
+		mild = 50;
+	}
+
 	return async function (dispatch) {
 		try {
 			const res = await axios.get(url);
 			const data = await res.data;
 
 			const getWeatherRange = (temperature) => {
-				if (temperature < 0) {
+				if (temperature < cold) {
 					return "cold";
 				}
-				if (temperature >= 0 && temperature <= 10) {
+				if (temperature >= cold && temperature <= mild) {
 					return "mild";
 				}
-				if (temperature > 10) {
+				if (temperature > mild) {
 					return "hot";
 				}
 			};
 
 			const temp = getWeatherRange(data.main.feels_like);
-
 			dispatch(weatherSuccess(data, temp));
 		} catch (error) {
 			console.log(error);

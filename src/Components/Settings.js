@@ -10,14 +10,15 @@ function Settings(props) {
 	const city = useSelector((state) => state.weather.city);
 
 	const handleUnits = (e) => {
-		dispatch(setUnits(e.target.value));
+		const unitsFromInput = e.target.value;
+		dispatch(setUnits(unitsFromInput));
 		const url = new URL("https://api.openweathermap.org/data/2.5/weather");
 		url.search = new URLSearchParams({
 			appid: API_KEY,
 			q: city,
-			units: e.target.value,
+			units: unitsFromInput,
 		});
-		dispatch(getWeatherAction(url));
+		dispatch(getWeatherAction(url, unitsFromInput));
 	};
 
 	return (
