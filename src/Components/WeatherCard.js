@@ -36,7 +36,7 @@ function WeatherCard(props) {
 					</p>
 				</div>
 				<img
-					src={`http://openweathermap.org/img/wn/${weatherData.weather.icon}@2x.png`}
+					src={`https://openweathermap.org/img/wn/${weatherData.weather.icon}@2x.png`}
 					alt={weatherData.weather.description}
 				/>
 			</div>
